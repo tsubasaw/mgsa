@@ -1,10 +1,10 @@
 cat("\n  This R script analyses Output files from Roary; e.g. Tab Files (*.Rtab).\n\n")
 
 # Set Working Directory
-#setwd("~/projects/mgsa/roary/2016-06-07/analysis/")
+#setwd("~/projects/mgsa/roary/2016-06-07")
 
 # List files in a directory
-files <- list.files(path=".", pattern="number_of_.*\\.Rtab", full.names=TRUE)
+files <- list.files(path="analysis", pattern="number_of_.*\\.Rtab", full.names=TRUE)
 
 # Loading Data into R
 ld <- lapply(files, read.delim, header = FALSE)
