@@ -52,7 +52,7 @@ Last Update: 2016-06-07
          -n        fast core gene alignment with MAFFT, use with -e
          -v        verbose output to STDOUT
 
-4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genomeの結果を視覚化。
+4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genome解析結果を視覚化。
 
     roary_plots.py analysis/core_gene_alignment.newick analysis/gene_presence_absence.csv
 
@@ -71,14 +71,7 @@ Last Update: 2016-06-07
     # Running the R script
     Rscript --vanilla my_roary-2016-06-07.R
 
-[出力ファイル](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)は、論文の(Sup. Fig. 14-17)に対応。
-
-[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)  
-Tab delimited files are created for visualizing with R (Sup. Fig. 14-17).  
-- Sup. Fig. 14: Number of conserved genes.
-- Sup. Fig. 15: Number of genes in the pan genome.
-- Sup. Fig. 16: Number of new genes.
-- Sup. Fig. 17: Number of unique genes.
+[出力ファイル](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)は、Roaryのタブ区切りファイル(`*.Rtab`)から作成された箱ひげ図で、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)の(Sup. Fig. 14-17)に対応。
 
 #### References
 参考文献
