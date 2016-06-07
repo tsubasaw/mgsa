@@ -22,13 +22,12 @@ Last Update: 2016-06-07
 
 ## Updates
 
-### 2016-06-07
-
-G-language SystemのWEBサービス ([日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) でプラスミド配列の情報を取得
+G-language SystemのWEBサービスのチュートリアル ([日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) を参考にして、プラスミド配列の情報を取得
  - http://rest.g-language.org/NC_005088
  - http://rest.g-language.org/NC_005088/*/product
  - http://rest.g-language.org/NC_005088/output
 
+### 2016-06-07
 [How to perform a pangenome analysis using Roary](https://github.com/microgenomics/tutorials/blob/master/pangenome.md)
 
 #### Exercises
