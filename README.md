@@ -70,7 +70,7 @@ G-language SystemのWEBサービスのチュートリアル ([日本語](http://
 	 pangenome_matrix.png
 	 pangenome_pie.png
 
-Rスクリプト[`scripts/my_roary-2016-06-07.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary-2016-06-07.R)は、Roaryの出力ファイル(`*.Rtab`)から[箱ひげ図](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)を作成する。これらは、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)の(Sup. Fig. 14-17)に対応する。以下の通り、Rスクリプトを取得し、実行する:  
+Rスクリプト[`scripts/my_roary-2016-06-07.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary-2016-06-07.R)は、Roaryの出力ファイル(`*.Rtab`)から[箱ひげ図](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)を作成する。これらは、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf) の (Sup. Fig. 14-17) に対応する。以下の通り、Rスクリプトを取得し、実行する:  
 
     # Downloading the R script
     curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary-2016-06-07.R
