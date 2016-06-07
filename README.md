@@ -25,7 +25,14 @@ Last Update: 2016-06-07
 ### 2016-06-07
 [How to perform a pangenome analysis using Roary](https://github.com/microgenomics/tutorials/blob/master/pangenome.md)
 
-#### 演習
+G-language SystemのWEBサービス ([日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) でプラスミド配列の情報を取得
+ - http://rest.g-language.org/NC_005088
+ - http://rest.g-language.org/NC_005088/*/product
+ - http://rest.g-language.org/NC_005088/output
+
+#### Exercises
+演習
+
 [ターミナル](http://techacademy.jp/magazine/5155)を開き、Linuxサーバにリモートログインする。`ssh -X`で接続する。
 
 	$ ssh -X user@remote.domain
@@ -93,7 +100,9 @@ Last Update: 2016-06-07
 ![http://www.slideshare.net/MirkoRossi2/toolbox-for-bacterial-population-analysis-using-ngs](http://image.slidesharecdn.com/introductionbacterialpopulationgenomics-160414060754/95/toolbox-for-bacterial-population-analysis-using-ngs-26-638.jpg)
 ![https://twitter.com/DrKatHolt/status/685617597367193600](https://pbs.twimg.com/media/CYPNkjYVAAAL666.png)
 
-#### 演習
+#### Exercises
+演習
+
 シェルスクリプト[`scripts/run_roary.sh`](https://github.com/haruosuz/mgsa/blob/master/scripts/run_roary.sh)は、全ステップ（データの取得と変換、Roary、FastTree）を自動実行する。以下の通り、シェルスクリプトを取得し、実行する:  
 
     # Downloading the shell script
@@ -243,7 +252,9 @@ Example 3: [FASTA](https://ja.wikipedia.org/wiki/FASTA)形式の変更：[FASTA]
 
 ![](http://www.ncbi.nlm.nih.gov/core/assets/news/images/NoGIs_Fig3_After.jpg)
 
-#### 演習
+#### Exercises
+演習
+
 本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。
 
 ##### BLASTヒット配列の情報を取得
@@ -327,7 +338,9 @@ tBLASTnで検出
   - [Searching for missing genes and identifying causes for absence with tblastn](https://github.com/mattb112885/clusterDbAnalysis/wiki/Searching-for-missing-genes-and-identifying-causes-for-absence-with-tblastn) | ITEP wrapper for tBLASTn
   - [KAAS - KEGG Automatic Annotation Server](http://www.genome.jp/tools/kaas/) | 双方向ヒット BBH (bi-directional best hit) | 一方向ヒット SBH (single-directional best hit)
 
-#### 演習
+#### Exercises
+演習
+
 本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。ターミナルで以下のコマンドを実行する:  
 
 	bash scripts/2016-05-16.sh
@@ -439,7 +452,9 @@ Rコンソールで、以下のコマンドを実行する:
 
 [Venn diagram plot that represents the three parts of the pan-genome. In gray: core genome; yellow: accessory or dispensable genome, and blue: species-specific or strain-specific genes. Adapted: Muzzi et al., 2007.](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4765519/figure/F1/)
 
-#### 演習
+#### Exercises
+演習
+
 各株における各遺伝子の有/無(1/0)を示すgene contentのデータ行列を作成し、遺伝子の共有に基づくベン図の作成とクラスター分析を行なう。解析の手順は次の通り。
 本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。
 以下の通りRスクリプト`scripts/test_gene_content.R`を実行する:  
