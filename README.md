@@ -61,7 +61,7 @@ G-language SystemのWEBサービスのチュートリアル ([日本語](http://
 
 4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genome解析結果を視覚化。
 
-    roary_plots.py analysis/core_gene_alignment.newick analysis/gene_presence_absence.csv
+        roary_plots.py analysis/core_gene_alignment.newick analysis/gene_presence_absence.csv
 
 [出力ファイル](https://github.com/haruosuz/mgsa/tree/master/analysis/roary_plots)は以下の通り:  
 
