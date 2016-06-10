@@ -495,21 +495,31 @@ Rパッケージ("limma","vegan")が無い場合には、Rコンソールで以�
 ----------
 
 ## References
-- [SFC 2015年度 秋学期 基礎バイオインフォマティクス](https://github.com/haruosuz/introBI)
- - [R言語入門](https://dl.dropboxusercontent.com/u/33495171/introBI/2015-11-11/README.md.html)
-- [SFC 2016年度 春学期 生命動態のデータサイエンス](https://github.com/haruosuz/DS4GD)
- - [Rを用いたデータの解析と可視化](https://dl.dropboxusercontent.com/u/33495171/DS4GD/BBS.md.html#chapter-4-analysis-and-visualisation-of-data-using-r)
-
-- [バイオインフォマティクス](http://crusade1096.web.fc2.com/katei.html) > [BLAST](http://crusade1096.web.fc2.com/blast.html)
-
-- [NGS Surfer's Wiki | コンバータ・パーサ](https://cell-innovation.nig.ac.jp/wiki/tiki-index.php?page=コンバータ・パーサ)
-
+- 細菌ゲノム比較ツール
 - [ITEP: Integrated Toolkit for Exploration of Pan-genomes | The Price Lab](https://price.systemsbiology.org/research/itep/)
-
 - Tools for bacterial comparative genomics | Holt Lab http://holtlab.net/2015/02/25/tools-for-bacterial-comparative-genomics/
  - Bacterial genomics tutorial | Holt Lab https://holtlab.net/2014/12/27/bacterial-genomics-tutorial-2/
  - Bacterial genomics tutorial | BacPathGenomics https://bacpathgenomics.wordpress.com/2013/04/13/bacterial-genomics-tutorial/
  - Beginner's guide to comparative bacterial genome analysis using next-generation sequence data. Microb Inform Exp. 2013. http://www.ncbi.nlm.nih.gov/pubmed/23575213
+
+- 細菌ゲノム比較に関する論文
+ - サルモネラ [Evolutionary Genomics of Salmonella enterica Subspecies. MBio. 2013](http://www.ncbi.nlm.nih.gov/pubmed/23462113)
+ - [下毛類](https://ja.wikipedia.org/wiki/下毛類)Euplotes共生細菌 [Polynucleobacter necessarius, a model for genome reduction in both free-living and symbiotic bacteria. Proc Natl Acad Sci U S A. 2013 Nov ](http://www.ncbi.nlm.nih.gov/pubmed/24167248)
+ - クロストリジウム属 [Comparative genomic and phenomic analysis of Clostridium difficile and Clostridium sordellii, two related pathogens with differing host tissue preference. BMC Genomics. 2015 Jun](http://www.ncbi.nlm.nih.gov/pubmed/26059449)
+ - ゾウリムシ核内共生細菌ホロスポラ [Draft genome sequences of three Holospora species (Holospora obtusa, Holospora undulata, and Holospora elegans), endonuclear symbiotic bacteria of the ciliate Paramecium caudatum. FEMS Microbiol Lett. 2014 Oct](http://www.ncbi.nlm.nih.gov/pubmed/25115770)
+ - 大腸菌 [Inflammation-associated Adherent-invasive Escherichia coli Are Enriched in Pathways for Use of Propanediol and Iron and M-cell Translocation. Inflamm Bowel Dis. 2014 Nov](http://www.ncbi.nlm.nih.gov/pubmed/25230163)
+ - 膣内乳酸桿菌 [Comparative Functional Genomics of Lactobacillus spp. Reveals Possible Mechanisms for Specialization of Vaginal Lactobacilli to Their Environment. J Bacteriol. 2014 Apr](http://www.ncbi.nlm.nih.gov/pubmed/24488312)
+ - ブドウ球菌 [Comparative genomic analysis of the genus Staphylococcus including Staphylococcus aureus and its newly described sister species Staphylococcus simiae. BMC Genomics. 2012 Jan](http://www.ncbi.nlm.nih.gov/pubmed/22272658)
+ - レンサ球菌 [Comparative genomic analysis of the Streptococcus dysgalactiae species group: gene content, molecular adaptation, and promoter evolution. Genome Biol Evol. 2011](http://www.ncbi.nlm.nih.gov/pubmed/21282711)
+
+- SFC授業
+ - [SFC 2015年度 秋学期 基礎バイオインフォマティクス](https://github.com/haruosuz/introBI)
+  - [R言語入門](https://dl.dropboxusercontent.com/u/33495171/introBI/2015-11-11/README.md.html)
+ - [SFC 2016年度 春学期 生命動態のデータサイエンス](https://github.com/haruosuz/DS4GD)
+  - [Rを用いたデータの解析と可視化](https://dl.dropboxusercontent.com/u/33495171/DS4GD/BBS.md.html#chapter-4-analysis-and-visualisation-of-data-using-r)
+
+- [バイオインフォマティクス](http://crusade1096.web.fc2.com/katei.html) > [BLAST](http://crusade1096.web.fc2.com/blast.html)
+- [NGS Surfer's Wiki | コンバータ・パーサ](https://cell-innovation.nig.ac.jp/wiki/tiki-index.php?page=コンバータ・パーサ)
 
 - Rによる系統解析
   - [R - 井上 潤](http://www.geocities.jp/ancientfishtree/R_JI.html)
