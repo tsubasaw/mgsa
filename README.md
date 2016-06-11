@@ -18,17 +18,33 @@ Last Update: 2016-06-07
      analysis/: contains results of data analyses
      images/: contains image files
 
+本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。
+
 ----------
 
 ## Updates
 
-G-language SystemのWEBサービスのチュートリアル ([日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) を参考にして、プラスミド配列の情報を取得
+G-language Systemウェブサービス (チュートリアル[日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) を用いて、プラスミド配列の情報を取得
  - http://rest.g-language.org/NC_005088
  - http://rest.g-language.org/NC_005088/*/product
  - http://rest.g-language.org/NC_005088/output
 
+### 2016-06-14
+[How to perform a pangenome analysis using Roary | Pangenome sequence analysis](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#pangenome-sequence-analysis)
+
+#### Exercises
+演習
+
+以下の通り、Python3スクリプト[`DBGenerator.py`](https://github.com/EnzoAndree/tutorials/blob/patch-1/DBGenerator.py)を取得し、実行する:  
+
+    # Downloading the Python3 script
+    curl -O https://raw.githubusercontent.com/EnzoAndree/tutorials/patch-1/DBGenerator.py
+
+    # Running the Python3 script
+    python3 GeneratorDB.py ffn
+
 ### 2016-06-07
-[How to perform a pangenome analysis using Roary](https://github.com/microgenomics/tutorials/blob/master/pangenome.md)
+[How to perform a pangenome analysis using Roary | Determining the pangenome](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#determining-the-pangenome)
 
 #### Exercises
 演習
@@ -78,9 +94,7 @@ Rスクリプト[`scripts/my_roary-2016-06-07.R`](https://github.com/haruosuz/mg
     # Running the R script
     Rscript --vanilla my_roary-2016-06-07.R
 
-#### References
-参考文献
-
+#### 参考文献
 - `ssh -X`
   - [Forwarding X11 using ssh on modern desktop](http://vega.sra-tohoku.co.jp/~kabe/vsd/ssh-x.html)
   - [Xアプリのssh越し起動方法 - ものぐさ備忘録](http://d.hatena.ne.jp/gikogeek/20080220)
@@ -195,9 +209,7 @@ Sup. Table 1. Output files File
 | pan_genome_reference.fa | pan-genomeの遺伝子の塩基配列（FASTA形式） |
 | pan_genome_sequences/ | 各遺伝子クラスターのアライメント（MultiFASTA形式） |
 
-#### References
-参考文献
-
+#### 参考文献
 - Roary: rapid large-scale prokaryote pan genome analysis.
   - [github](https://github.com/sanger-pathogens/Roary)
   - [website](https://sanger-pathogens.github.io/Roary/)
@@ -339,7 +351,8 @@ tBLASTnで検出
 #### Exercises
 演習
 
-本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。ターミナルで以下のコマンドを実行する:  
+本ページの[Clone or download -> Download ZIP](https://github.com/haruosuz/mgsa/archive/master.zip)をクリックして取得されたディレクトリ（例 `~/Downloads/mgsa-master`）に移動する。
+ターミナルで以下のコマンドを実行する:  
 
 	bash scripts/2016-05-16.sh
 
@@ -351,11 +364,11 @@ tBLASTnで検出
 	 Rplots.pdf
 
 #### 参考文献
-  - phylogenetic profiles
-    - [統計数理(2006) カーネル法による複数のゲノムデータからのタンパク質間機能ネットワークの推定](http://www.ism.ac.jp/editsec/toukei/pdf/54-2-357.pdf)
-    - [2005 系統プロファイルを利用した代謝反応ネットワーク中の保存領域抽出手法](http://ci.nii.ac.jp/naid/110003482755)
-    - [Date SV, Marcotte EM. Nat Biotechnol. 2003 Sep;21(9):1055-62. Discovery of uncharacterized cellular systems by genome-wide analysis of functional linkages.](http://www.ncbi.nlm.nih.gov/pubmed/12923548)
-    - [Pellegrini M et al. Proc Natl Acad Sci U S A. 1999 Apr 13;96(8):4285-8. Assigning protein functions by comparative genome analysis: protein phylogenetic profiles. ](http://www.ncbi.nlm.nih.gov/pubmed/10200254)
+- phylogenetic profiles
+  - [統計数理(2006) カーネル法による複数のゲノムデータからのタンパク質間機能ネットワークの推定](http://www.ism.ac.jp/editsec/toukei/pdf/54-2-357.pdf)
+  - [2005 系統プロファイルを利用した代謝反応ネットワーク中の保存領域抽出手法](http://ci.nii.ac.jp/naid/110003482755)
+  - [Date SV, Marcotte EM. Nat Biotechnol. 2003 Sep;21(9):1055-62. Discovery of uncharacterized cellular systems by genome-wide analysis of functional linkages.](http://www.ncbi.nlm.nih.gov/pubmed/12923548)
+  - [Pellegrini M et al. Proc Natl Acad Sci U S A. 1999 Apr 13;96(8):4285-8. Assigning protein functions by comparative genome analysis: protein phylogenetic profiles. ](http://www.ncbi.nlm.nih.gov/pubmed/10200254)
 
 ----------
 
@@ -503,10 +516,14 @@ Rパッケージ("limma","vegan")が無い場合には、Rコンソールで以�
  - Beginner's guide to comparative bacterial genome analysis using next-generation sequence data. Microb Inform Exp. 2013. http://www.ncbi.nlm.nih.gov/pubmed/23575213
 
 - 細菌ゲノム比較に関する論文
- - サルモネラ [Evolutionary Genomics of Salmonella enterica Subspecies. MBio. 2013](http://www.ncbi.nlm.nih.gov/pubmed/23462113)
- - [下毛類](https://ja.wikipedia.org/wiki/下毛類)Euplotes共生細菌 [Polynucleobacter necessarius, a model for genome reduction in both free-living and symbiotic bacteria. Proc Natl Acad Sci U S A. 2013 Nov ](http://www.ncbi.nlm.nih.gov/pubmed/24167248)
+ - 大腸菌 [Comparative genomics of recent Shiga toxin-producing Escherichia coli O104:H4: short-term evolution of an emerging pathogen. MBio. 2013 Jan 22](http://www.ncbi.nlm.nih.gov/pubmed/23341549)
+ - 大腸菌 [Genomic epidemiology of the Escherichia coli O104:H4 outbreaks in Europe, 2011. Proc Natl Acad Sci U S A. 2012 Feb](http://www.ncbi.nlm.nih.gov/pubmed/22315421)
+ - 大腸菌 [Comparative genomics reveal the mechanism of the parallel evolution of O157 and non-O157 enterohemorrhagic Escherichia coli. Proc Natl Acad Sci U S A. 2009 Oct](http://www.ncbi.nlm.nih.gov/pubmed/19815525)
+ - [下毛類](https://ja.wikipedia.org/wiki/下毛類)Euplotesの共生細菌 [Polynucleobacter necessarius, a model for genome reduction in both free-living and symbiotic bacteria. Proc Natl Acad Sci U S A. 2013 Nov ](http://www.ncbi.nlm.nih.gov/pubmed/24167248)
+ - サルモネラ [Evolutionary Genomics of Salmonella enterica Subspecies. MBio. 2013 Mar](http://www.ncbi.nlm.nih.gov/pubmed/23462113)
+ - []()
  - クロストリジウム属 [Comparative genomic and phenomic analysis of Clostridium difficile and Clostridium sordellii, two related pathogens with differing host tissue preference. BMC Genomics. 2015 Jun](http://www.ncbi.nlm.nih.gov/pubmed/26059449)
- - ゾウリムシ核内共生細菌ホロスポラ [Draft genome sequences of three Holospora species (Holospora obtusa, Holospora undulata, and Holospora elegans), endonuclear symbiotic bacteria of the ciliate Paramecium caudatum. FEMS Microbiol Lett. 2014 Oct](http://www.ncbi.nlm.nih.gov/pubmed/25115770)
+ - ゾウリムシ核内共生細菌 [Draft genome sequences of three Holospora species (Holospora obtusa, Holospora undulata, and Holospora elegans), endonuclear symbiotic bacteria of the ciliate Paramecium caudatum. FEMS Microbiol Lett. 2014 Oct](http://www.ncbi.nlm.nih.gov/pubmed/25115770)
  - 大腸菌 [Inflammation-associated Adherent-invasive Escherichia coli Are Enriched in Pathways for Use of Propanediol and Iron and M-cell Translocation. Inflamm Bowel Dis. 2014 Nov](http://www.ncbi.nlm.nih.gov/pubmed/25230163)
  - 膣内乳酸桿菌 [Comparative Functional Genomics of Lactobacillus spp. Reveals Possible Mechanisms for Specialization of Vaginal Lactobacilli to Their Environment. J Bacteriol. 2014 Apr](http://www.ncbi.nlm.nih.gov/pubmed/24488312)
  - ブドウ球菌 [Comparative genomic analysis of the genus Staphylococcus including Staphylococcus aureus and its newly described sister species Staphylococcus simiae. BMC Genomics. 2012 Jan](http://www.ncbi.nlm.nih.gov/pubmed/22272658)
