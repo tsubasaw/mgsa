@@ -29,20 +29,6 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
  - http://rest.g-language.org/NC_005088/*/product
  - http://rest.g-language.org/NC_005088/output
 
-### 2016-06-14
-[How to perform a pangenome analysis using Roary | Pangenome sequence analysis](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#pangenome-sequence-analysis)
-
-#### Exercises
-演習
-
-以下の通り、Python3スクリプト[`DBGenerator.py`](https://github.com/EnzoAndree/tutorials/blob/patch-1/DBGenerator.py)を取得し、実行する:  
-
-    # Downloading the Python3 script
-    curl -O https://raw.githubusercontent.com/EnzoAndree/tutorials/patch-1/DBGenerator.py
-
-    # Running the Python3 script
-    python3 GeneratorDB.py ffn
-
 ### 2016-06-07
 [How to perform a pangenome analysis using Roary | Determining the pangenome](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#determining-the-pangenome)
 
