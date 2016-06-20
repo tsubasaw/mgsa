@@ -40,6 +40,7 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 ### 2016-06-20
 
 ホモログと判定するBLASTPのパラメータ（%identity）の閾値を指定して、Roaryを実行する。
+グループ（クレード/種/株）に特有の遺伝子（"unique genes"）を同定する。
 
 #### Exercises
 演習
@@ -86,7 +87,6 @@ Rスクリプト[`scripts/my_roary_gene_presence_absence.R`](https://github.com/
 [`roary -i 95`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i95)で2つに分割されたのに対して、  
 [`roary -i 50`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i50)で1つに統合された。
 
-
 Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_unique.R)を用いて、グループ（クレード/種/株）に特有の遺伝子（"unique genes"）を同定する:  
 
     # Downloading the R script
@@ -96,13 +96,8 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     Rscript --vanilla my_roary_gene_unique.R
 
     # Output files
-    my.ORGANISM.txt
-    tree.pdf
-    analysis/accessory_binary_genes.fa.newick.tre  
-    analysis/core_gene_alignment.newick.tre
-
-
-
+    gene_presence_group1_absence_group2.csv
+    gene_presence_group2_absence_group1.csv
 
 ----------
 
