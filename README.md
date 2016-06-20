@@ -2,7 +2,7 @@
 ----------
 
 Haruo Suzuki (haruo[at]g-language[dot]org)  
-Last Update: 2016-06-07  
+Last Update: 2016-06-21  
 
 ----------
 
