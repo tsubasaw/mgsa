@@ -24,6 +24,14 @@ Last Update: 2016-06-07
 
 ## Updates
 
+[Roary](http://sanger-pathogens.github.io/Roary)で使用するプラスミド配列は以下の通り:  
+
+    $ grep 'DEFINITION' data/*.gbk
+    data/NC_001735.gbk:DEFINITION  Enterobacter aerogenes plasmid R751, complete sequence.
+    data/NC_005088.gbk:DEFINITION  Delftia acidovorans B plasmid pUO1, complete sequence.
+    data/NC_007337.gbk:DEFINITION  Ralstonia eutropha JMP134 plasmid 1, complete sequence.
+    data/NC_008459.gbk:DEFINITION  Bordetella pertussis plasmid pBP136 DNA, complete sequence.
+
 G-language Systemウェブサービス (チュートリアル[日本語](http://www.g-language.org/wiki/restgenomeanalysisjapanese)・[English](http://www.g-language.org/wiki/restgenomeanalysisenglish)) を用いて、プラスミド配列の情報を取得
  - http://rest.g-language.org/NC_005088
  - http://rest.g-language.org/NC_005088/*/product
@@ -32,7 +40,11 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 ### 2016-06-20
 
 ホモログと判定するBLASTPのパラメータ（%identity）の閾値を指定して、Roaryを実行する。
-`ssh -X`でLinuxサーバに接続し、シェルスクリプト[`scripts/run_roary-2016-06-21.sh`]()を取得し実行する:  
+
+#### Exercises
+演習
+
+`ssh -X`でLinuxサーバに接続し、シェルスクリプト[`scripts/run_roary-2016-06-21.sh`](https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/run_roary-2016-06-21.sh)を取得し実行する:  
 
     # ssh -X cacao # ssh -X neo
 
@@ -46,7 +58,7 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 
 1. GenBank形式ファイル(`.gbk`)をダウンロード。
 2. GenBank形式ファイル(`.gbk`)をGFF3形式ファイル(`.gff`)に変換。
-3. Roaryを実行。ホモログと判定するBLASTPの配列一致率（%identity）の最低値は、デフォルトでは95%と厳しすぎるので、50%に設定する(`-i 50`):  
+3. Roaryを実行。ホモログと判定するBLASTPの配列一致率（%identity）の最低値（デフォルトは95%）を50%に設定する(`-i 50`):  
 
         roary -f ./analysis/ -e -n -i 50 -v ./data/*.gff
 
@@ -57,18 +69,8 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
          -i        minimum percentage identity for blastp [95]
          -v        verbose output to STDOUT
 
-
-
-	$ grep 'DEFINITION' data/*.gbk
-	data/NC_001735.gbk:DEFINITION  Enterobacter aerogenes plasmid R751, complete sequence.
-	data/NC_005088.gbk:DEFINITION  Delftia acidovorans B plasmid pUO1, complete sequence.
-	data/NC_007337.gbk:DEFINITION  Ralstonia eutropha JMP134 plasmid 1, complete sequence.
-	data/NC_008459.gbk:DEFINITION  Bordetella pertussis plasmid pBP136 DNA, complete sequence.
-
-
-Rスクリプト
-
-[`scripts/my_roary_gene_presence_absence.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_presence_absence.R)でタンパク質（'ribosomal.protein', 'elongation.factor'）の個数を確認する。
+Rスクリプト[`scripts/my_roary_gene_presence_absence.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_presence_absence.R)を用いて、
+接合伝達タンパク質 conjugal transfer protein ('Trb') の個数を確認する:  
 
     # Downloading the R script
     curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_gene_presence_absence.R
@@ -76,20 +78,15 @@ Rスクリプト
     # Running the R script
     Rscript --vanilla my_roary_gene_presence_absence.R
 
+    # Output files
+    gene_content.Trb.csv
+    gene_count.Trb.csv
 
+3種類のtrb遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、
+[`roary -i 95`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i95)で2つに分割されたのに対して、  
+[`roary -i 50`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i50)で1つに統合された。
 
-添付のRスクリプト<my_roary_tree.R>を以下の通り実行してください。
-
-	Rscript --vanilla my_roary_tree.R
-
-系統樹のノードの名前を「ファイル名」から「ORGANISM名」へ変換した以下のファイルが出力されるはずです。
-
-	my.ORGANISM.txt
-	tree.pdf
-	analysis/accessory_binary_genes.fa.newick.tre  
-	analysis/core_gene_alignment.newick.tre
-
-
+----------
 
 ### 2016-06-07
 [How to perform a pangenome analysis using Roary | Determining the pangenome](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#determining-the-pangenome)
@@ -113,15 +110,9 @@ Rスクリプト
 
 1. GenBank形式ファイル(`.gbk`)をダウンロード。
 2. GenBank形式ファイル(`.gbk`)をGFF3形式ファイル(`.gff`)に変換。
-3. Roaryを実行し、pan-genome解析。`-e --dont_delete_files`オプションを付けると、`pan_genome_sequences/`サブディレクトリに各遺伝子クラスターのアライメント（MultiFASTA形式ファイル）が生成される。[3 Output files | 3.2 Multifasta files of each gene](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)
+3. Roaryを実行。`-e --dont_delete_files`オプションを付けると、`pan_genome_sequences/`サブディレクトリに各遺伝子クラスターのアライメント（MultiFASTA形式ファイル）が生成される。[3 Output files | 3.2 Multifasta files of each gene](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)
 
         roary -f ./analysis/ -e --dont_delete_files -n -v ./data/*.gff
-
-        Options: 
-         -f STR    output directory [.]
-         -e        create a multiFASTA alignment of core genes using PRANK
-         -n        fast core gene alignment with MAFFT, use with -e
-         -v        verbose output to STDOUT
 
 4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genome解析結果を視覚化。[出力ファイル](https://github.com/haruosuz/mgsa/tree/master/analysis/roary_plots)
 
@@ -155,7 +146,6 @@ Rスクリプト[`scripts/my_roary_Rtab.R`](https://github.com/haruosuz/mgsa/blo
 
     # Running the R script
     Rscript --vanilla my_roary_Rtab.R
-
 
 #### 参考文献
 - `ssh -X`
@@ -221,6 +211,12 @@ Rスクリプト[`scripts/my_roary_Rtab.R`](https://github.com/haruosuz/mgsa/blo
 
         # Running Roary
         roary -f ./analysis/ -e -n -v ./data/*.gff
+
+        # Options: 
+         -f STR    output directory [.]
+         -e        create a multiFASTA alignment of core genes using PRANK
+         -n        fast core gene alignment with MAFFT, use with -e
+         -v        verbose output to STDOUT
 
         # Output
         analysis/
