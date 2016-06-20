@@ -29,6 +29,68 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
  - http://rest.g-language.org/NC_005088/*/product
  - http://rest.g-language.org/NC_005088/output
 
+### 2016-06-20
+
+ホモログと判定するBLASTPのパラメータ（%identity）の閾値を指定して、Roaryを実行する。
+`ssh -X`でLinuxサーバに接続し、シェルスクリプト[`scripts/run_roary-2016-06-21.sh`]()を取得し実行する:  
+
+    # ssh -X cacao # ssh -X neo
+
+    # Downloading the shell script
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/run_roary-2016-06-21.sh
+
+    # Running the shell script
+    (time bash run_roary-2016-06-21.sh &) >& log.roary-2016-06-21.txt
+
+各ステップは以下の通り:  
+
+1. GenBank形式ファイル(`.gbk`)をダウンロード。
+2. GenBank形式ファイル(`.gbk`)をGFF3形式ファイル(`.gff`)に変換。
+3. Roaryを実行。ホモログと判定するBLASTPの配列一致率（%identity）の最低値は、デフォルトでは95%と厳しすぎるので、50%に設定する(`-i 50`):  
+
+        roary -f ./analysis/ -e -n -i 50 -v ./data/*.gff
+
+        Options: 
+         -f STR    output directory [.]
+         -e        create a multiFASTA alignment of core genes using PRANK
+         -n        fast core gene alignment with MAFFT, use with -e
+         -i        minimum percentage identity for blastp [95]
+         -v        verbose output to STDOUT
+
+
+
+	$ grep 'DEFINITION' data/*.gbk
+	data/NC_001735.gbk:DEFINITION  Enterobacter aerogenes plasmid R751, complete sequence.
+	data/NC_005088.gbk:DEFINITION  Delftia acidovorans B plasmid pUO1, complete sequence.
+	data/NC_007337.gbk:DEFINITION  Ralstonia eutropha JMP134 plasmid 1, complete sequence.
+	data/NC_008459.gbk:DEFINITION  Bordetella pertussis plasmid pBP136 DNA, complete sequence.
+
+
+Rスクリプト
+
+[`scripts/my_roary_gene_presence_absence.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_presence_absence.R)でタンパク質（'ribosomal.protein', 'elongation.factor'）の個数を確認する。
+
+    # Downloading the R script
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_gene_presence_absence.R
+
+    # Running the R script
+    Rscript --vanilla my_roary_gene_presence_absence.R
+
+
+
+添付のRスクリプト<my_roary_tree.R>を以下の通り実行してください。
+
+	Rscript --vanilla my_roary_tree.R
+
+系統樹のノードの名前を「ファイル名」から「ORGANISM名」へ変換した以下のファイルが出力されるはずです。
+
+	my.ORGANISM.txt
+	tree.pdf
+	analysis/accessory_binary_genes.fa.newick.tre  
+	analysis/core_gene_alignment.newick.tre
+
+
+
 ### 2016-06-07
 [How to perform a pangenome analysis using Roary | Determining the pangenome](https://github.com/microgenomics/tutorials/blob/master/pangenome.md#determining-the-pangenome)
 
@@ -61,24 +123,39 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
          -n        fast core gene alignment with MAFFT, use with -e
          -v        verbose output to STDOUT
 
-4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genome解析結果を視覚化。
+4. [Roary plots](https://github.com/sanger-pathogens/Roary/tree/master/contrib/roary_plots)を実行し、pan-genome解析結果を視覚化。[出力ファイル](https://github.com/haruosuz/mgsa/tree/master/analysis/roary_plots)
 
         roary_plots.py analysis/core_gene_alignment.newick analysis/gene_presence_absence.csv
 
-[出力ファイル](https://github.com/haruosuz/mgsa/tree/master/analysis/roary_plots)は以下の通り:  
-
+        # Output
 	analysis/roary_plots/
 	 pangenome_frequency.png
 	 pangenome_matrix.png
 	 pangenome_pie.png
 
-Rスクリプト[`scripts/my_roary-2016-06-07.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary-2016-06-07.R)は、Roaryの出力ファイル(`*.Rtab`)から[箱ひげ図](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)を作成する。これらは、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf) の (Sup. Fig. 14-17) に対応する。以下の通り、Rスクリプトを取得し、実行する:  
+[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)  
+Tab delimited files are created for visualizing with R (Sup. Fig. 14-17).  
+- Sup. Fig. 14: Number of conserved genes.
+- Sup. Fig. 15: Number of genes in the pan genome.
+- Sup. Fig. 16: Number of new genes.
+- Sup. Fig. 17: Number of unique genes.
+
+        # Tab Files for producing graphs in R
+        analysis/
+         number_of_conserved_genes.Rtab
+         number_of_genes_in_pan_genome.Rtab
+         number_of_new_genes.Rtab
+         number_of_unique_genes.Rtab
+
+Rスクリプト[`scripts/my_roary_Rtab.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_Rtab.R)を用いて、
+タブ区切りファイル(`*.Rtab`)から[箱ひげ図](https://ja.wikipedia.org/wiki/箱ひげ図)[`analysis/2016-06-07/Rplots.pdf`](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)を作成する。これらの箱ひげ図は、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf) の (Sup. Fig. 14-17) に対応する。以下の通り、Rスクリプトを取得し、実行する:  
 
     # Downloading the R script
-    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary-2016-06-07.R
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_Rtab.R
 
     # Running the R script
-    Rscript --vanilla my_roary-2016-06-07.R
+    Rscript --vanilla my_roary_Rtab.R
+
 
 #### 参考文献
 - `ssh -X`
