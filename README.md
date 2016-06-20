@@ -79,6 +79,9 @@ Rスクリプト[`scripts/my_roary_gene_presence_absence.R`](https://github.com/
     # Running the R script
     Rscript --vanilla my_roary_gene_presence_absence.R
 
+    # Input files
+    analysis/gene_presence_absence.csv
+
     # Output files
     gene_content.Trb.csv
     gene_count.Trb.csv
@@ -95,6 +98,9 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     # Running the R script
     Rscript --vanilla my_roary_gene_unique.R
 
+    # Input files
+    analysis/gene_presence_absence.csv
+
     # Output files
     gene_presence_group1_absence_group2.csv
     gene_presence_group2_absence_group1.csv
@@ -110,6 +116,11 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
 
     # Running the R script
     Rscript --vanilla my_roary_tree.R
+
+    # Input files
+    analysis/*.newick
+    analysis/accessory_binary_genes.fa.newick
+    analysis/core_gene_alignment.newick
 
     # Output files
     my.ORGANISM.txt
