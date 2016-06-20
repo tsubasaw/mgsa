@@ -82,9 +82,45 @@ Rスクリプト[`scripts/my_roary_gene_presence_absence.R`](https://github.com/
     gene_content.Trb.csv
     gene_count.Trb.csv
 
-3種類のtrb遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、
+3種類のtrb遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、  
 [`roary -i 95`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i95)で2つに分割されたのに対して、  
 [`roary -i 50`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i50)で1つに統合された。
+
+
+Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_unique.R)を用いて、グループ（クレード/種/株）に特有の遺伝子（"unique genes"）を同定する:  
+
+    # Downloading the R script
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_gene_unique.R
+
+    # Running the R script
+    Rscript --vanilla my_roary_gene_unique.R
+
+    # Output files
+    my.ORGANISM.txt
+    tree.pdf
+    analysis/accessory_binary_genes.fa.newick.tre  
+    analysis/core_gene_alignment.newick.tre
+
+
+
+
+----------
+
+### 2016-06-14
+
+[Roary](http://sanger-pathogens.github.io/Roary)でFastTreeを用いて、遺伝子の有/無(1/0)に基づく樹形図 (accessory_binary_genes.fa.newick) と、コア遺伝子アライメントに基づく系統樹 (core_gene_alignment.newick) を作成した。Rスクリプト[`scripts/my_roary_tree.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_tree.R)を用いて、これらの樹形図や系統樹のノードのラベルにORGANISM名を付ける:  
+
+    # Downloading the R script
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_tree.R
+
+    # Running the R script
+    Rscript --vanilla my_roary_tree.R
+
+    # Output files
+    my.ORGANISM.txt
+    tree.pdf
+    analysis/accessory_binary_genes.fa.newick.tre  
+    analysis/core_gene_alignment.newick.tre
 
 ----------
 

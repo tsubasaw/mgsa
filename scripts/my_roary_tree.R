@@ -1,6 +1,7 @@
 
 # Set Working Directory
-#setwd("~/projects/mgsa/roary/2016-06-07")
+#setwd("~/projects/mgsa/roary/2016-06-07") # i 95
+#setwd("~/projects/mgsa/roary/2016-06-21") # i 50
 
 system("grep 'ORGANISM' data/*.{gbk,gbff}  | sort -u | sed 's#data/##' | sed 's/ ORGANISM  //' > my.ORGANISM.txt")
 #grep 'plasmid=' data/*.gbk | awk '{print $1,$2}'
