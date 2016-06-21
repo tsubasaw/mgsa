@@ -62,7 +62,7 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 
 1. GenBank形式ファイル(`.gbk`)をダウンロード。
 2. GenBank形式ファイル(`.gbk`)をGFF3形式ファイル(`.gff`)に変換。
-3. Roaryを実行。ホモログと判定するBLASTPの配列一致率（%identity）の最低値（デフォルトは95%）を50%に設定する(`-i 50`):  
+3. Roaryを実行。BLASTPの%identityの最低値（デフォルトは95%）を50%に設定する(`-i 50`):  
 
         roary -f ./analysis/ -e -n -i 50 -v ./data/*.gff
 
@@ -73,23 +73,22 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
          -i        minimum percentage identity for blastp [95]
          -v        verbose output to STDOUT
 
-Rスクリプト[`scripts/my_roary_gene_presence_absence.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_presence_absence.R)を用いて、
-接合伝達タンパク質 conjugal transfer protein ('Trb') の個数を確認する:  
+Rスクリプト[`scripts/my_roary_gene_content.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_gene_content.R)を用いて、特定のタンパク質のアノテーション（ファイル`gene_presence_absence.csv`の列'Annotation'）の個数を確認する。例えば、キーワードとして、接合伝達タンパク質 conjugal transfer protein ('Trb') と 機能未知タンパク質 ('hypothetical.protein') を引数として与える:  
 
     # Downloading the R script
-    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_gene_presence_absence.R
+    curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_gene_content.R
 
     # Running the R script
-    Rscript --vanilla my_roary_gene_presence_absence.R
+    Rscript --vanilla my_roary_gene_content.R 'Trb' 'hypothetical.protein'
 
     # Input files
     analysis/gene_presence_absence.csv
 
     # Output files
-    gene_content.Trb.csv
-    gene_count.Trb.csv
+    ls gene_content.*.csv
+    ls gene_count.*.csv
 
-3種類のtrb遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、  
+3種類の*trb*遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、  
 [`roary -i 95`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i95)で2つに分割されたのに対して、  
 [`roary -i 50`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i50)で1つに統合された。
 
@@ -105,8 +104,7 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     analysis/gene_presence_absence.csv
 
     # Output files
-    gene_presence_group1_absence_group2.csv
-    gene_presence_group2_absence_group1.csv
+    ls gene_presence_*_absence_*.csv
 
 ----------
 
@@ -124,9 +122,9 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     analysis/*.newick
 
     # Output files
-    my.ORGANISM.txt
-    tree.pdf
-    analysis/accessory_binary_genes.fa.newick.tre  
+    my.file.ORGANISM.txt
+    my.tree.pdf
+    analysis/accessory_binary_genes.fa.newick.tre
     analysis/core_gene_alignment.newick.tre
 
 ----------
