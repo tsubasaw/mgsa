@@ -117,8 +117,9 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     gene_presence_group1_absence_group2.csv
     gene_presence_group2_absence_group1.csv
 
-- [gene_presence_group1_absence_group2.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group1_absence_group2.csv)
-- [gene_presence_group2_absence_group1.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group2_absence_group1.csv)
+group1 ('NC_001735.gbk', 'NC_005088.gbk') と group2 ('NC_007337.gbk', 'NC_008459.gbk') を定義し、
+group1に存在してgroup2に存在しない遺伝子リスト[gene_presence_group1_absence_group2.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group1_absence_group2.csv)、
+group2に存在してgroup1に存在しない遺伝子リスト[gene_presence_group2_absence_group1.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group2_absence_group1.csv)を出力する。
 
 ----------
 
