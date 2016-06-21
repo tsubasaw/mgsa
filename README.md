@@ -88,7 +88,12 @@ Rスクリプト[`scripts/my_roary_gene_content.R`](https://github.com/haruosuz/
     ls gene_content.*.csv
     ls gene_count.*.csv
 
-3種類の*trb*遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は、  
+    gene_content.Trb.csv
+    gene_content.hypothetical.protein.csv
+    gene_count.Trb.csv
+    gene_count.hypothetical.protein.csv
+
+3種類の*trb*遺伝子 (conjugal transfer proteins TrbH, TrbJ, TrbL) の homologous groups は何れも  
 [`roary -i 95`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i95)で2つに分割されたのに対して、  
 [`roary -i 50`](https://github.com/haruosuz/mgsa/tree/master/analysis/roary/i50)で1つに統合された。
 
@@ -105,6 +110,9 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
 
     # Output files
     ls gene_presence_*_absence_*.csv
+
+    gene_presence_group1_absence_group2.csv
+    gene_presence_group2_absence_group1.csv
 
 ----------
 
