@@ -9,6 +9,8 @@ Last Update: 2016-06-21
 # Microbial Genome Sequence Analysis
 微生物ゲノム配列解析
 
+微生物は地球上の物質循環や環境保全において重要な役割を果たしている一方、様々な感染症の原因として人類の健康を脅かしている。宿主特異性や病原性の異なる近縁細菌のゲノム配列比較解析は、宿主環境への適応や病原メカニズムの理解に有効な情報を提供することが期待される。
+
 ## Project directory structures
 
     mgsa/
@@ -39,7 +41,7 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 
 ### 2016-06-20
 
-ホモログと判定するBLASTPのパラメータ（%identity）の閾値を指定して、Roaryを実行する。
+ホモログと判定される配列一致率（%identity）の閾値を指定して、Roaryを実行する。  
 グループ（クレード/種/株）に特有の遺伝子（"unique genes"）を同定する。
 
 #### Exercises
@@ -47,7 +49,8 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 
 `ssh -X`でLinuxサーバに接続し、シェルスクリプト[`scripts/run_roary-2016-06-21.sh`](https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/run_roary-2016-06-21.sh)を取得し実行する:  
 
-    # ssh -X cacao # ssh -X neo
+    # ssh -X cacao
+    # ssh -X neo
 
     # Downloading the shell script
     curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/run_roary-2016-06-21.sh
@@ -109,7 +112,7 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
 
 ### 2016-06-14
 
-[Roary](http://sanger-pathogens.github.io/Roary)でFastTreeを用いて、遺伝子の有/無(1/0)に基づく樹形図 (accessory_binary_genes.fa.newick) と、コア遺伝子アライメントに基づく系統樹 (core_gene_alignment.newick) を作成した。Rスクリプト[`scripts/my_roary_tree.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_tree.R)を用いて、これらの樹形図や系統樹のノードのラベルにORGANISM名を付ける:  
+[Roary](http://sanger-pathogens.github.io/Roary)でFastTreeを用いて、遺伝子の有/無(1/0)に基づく樹形図 (accessory_binary_genes.fa.newick) と、コア遺伝子アライメントに基づく系統樹 (core_gene_alignment.newick) を作成した。Rスクリプト[`scripts/my_roary_tree.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_tree.R)を用いて、treeのノードのラベルにORGANISM名を付ける:  
 
     # Downloading the R script
     curl -O https://raw.githubusercontent.com/haruosuz/mgsa/master/scripts/my_roary_tree.R
@@ -119,8 +122,6 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
 
     # Input files
     analysis/*.newick
-    analysis/accessory_binary_genes.fa.newick
-    analysis/core_gene_alignment.newick
 
     # Output files
     my.ORGANISM.txt
