@@ -39,7 +39,7 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
  - http://rest.g-language.org/NC_005088/*/product
  - http://rest.g-language.org/NC_005088/output
 
-### 2016-06-20
+### 2016-06-21
 
 ホモログと判定される配列一致率（%identity）の閾値を指定して、Roaryを実行する。  
 グループ（クレード/種/株）に特有の遺伝子（"unique genes"）を同定する。
@@ -57,6 +57,9 @@ G-language Systemウェブサービス (チュートリアル[日本語](http://
 
     # Running the shell script
     (time bash run_roary-2016-06-21.sh &) >& log.roary-2016-06-21.txt
+
+    # Use `tail -f` to constantly monitor files (use Control-C to stop)
+    tail -f log.txt
 
 各ステップは以下の通り:  
 
