@@ -168,24 +168,10 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
         roary_plots.py analysis/core_gene_alignment.newick analysis/gene_presence_absence.csv
 
         # Output
-	analysis/roary_plots/
-	 pangenome_frequency.png
-	 pangenome_matrix.png
-	 pangenome_pie.png
-
-[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)  
-Tab delimited files are created for visualizing with R (Sup. Fig. 14-17).  
-- Sup. Fig. 14: Number of conserved genes.
-- Sup. Fig. 15: Number of genes in the pan genome.
-- Sup. Fig. 16: Number of new genes.
-- Sup. Fig. 17: Number of unique genes.
-
-        # Tab Files for producing graphs in R
-        analysis/
-         number_of_conserved_genes.Rtab
-         number_of_genes_in_pan_genome.Rtab
-         number_of_new_genes.Rtab
-         number_of_unique_genes.Rtab
+        analysis/roary_plots/
+         pangenome_frequency.png
+         pangenome_matrix.png
+         pangenome_pie.png
 
 Rスクリプト[`scripts/my_roary_Rtab.R`](https://github.com/haruosuz/mgsa/blob/master/scripts/my_roary_Rtab.R)を用いて、
 タブ区切りファイル(`*.Rtab`)から[箱ひげ図](https://ja.wikipedia.org/wiki/箱ひげ図)[`analysis/2016-06-07/Rplots.pdf`](https://github.com/haruosuz/mgsa/blob/master/analysis/2016-06-07/Rplots.pdf)を作成する。これらの箱ひげ図は、[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf) の (Sup. Fig. 14-17) に対応する。以下の通り、Rスクリプトを取得し、実行する:  
@@ -195,6 +181,19 @@ Rスクリプト[`scripts/my_roary_Rtab.R`](https://github.com/haruosuz/mgsa/blo
 
     # Running the R script
     Rscript --vanilla my_roary_Rtab.R
+
+    # Input files
+    analysis/number_of_*.Rtab
+
+    # Output files
+    Rplots.pdf
+
+[Roary: Supplementary Material | 2.3 Output](http://bioinformatics.oxfordjournals.org/content/suppl/2015/07/20/btv421.DC1/Roary_supplementary_material.pdf)  
+Tab delimited files are created for visualizing with R (Sup. Fig. 14-17).  
+- Sup. Fig. 14: Number of conserved genes.
+- Sup. Fig. 15: Number of genes in the pan genome.
+- Sup. Fig. 16: Number of new genes.
+- Sup. Fig. 17: Number of unique genes.
 
 #### 参考文献
 - `ssh -X`
