@@ -117,6 +117,9 @@ Rスクリプト[`scripts/my_roary_gene_unique.R`](https://github.com/haruosuz/m
     gene_presence_group1_absence_group2.csv
     gene_presence_group2_absence_group1.csv
 
+- [gene_presence_group1_absence_group2.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group1_absence_group2.csv)
+- [gene_presence_group2_absence_group1.csv](https://github.com/haruosuz/mgsa/blob/master/analysis/roary/i50/gene_presence_group2_absence_group1.csv)
+
 ----------
 
 ### 2016-06-14
